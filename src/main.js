@@ -53,7 +53,7 @@ render();
 //网址添加当不填的时候触发
 $(".addButton").on("click", () => {
     let url = window.prompt("请问需要添加的网址是?");
-    if (url.indexOf("http") != 0) {
+    if (url.indexOf("http") !== 0) {
         url = "https://" + url;
     }
     hashMap.push({
