@@ -5,6 +5,10 @@ const xObject = JSON.parse(x); //把字符串重新变成对象
 const hashMap = xObject || [
   { logo: "A", url: "https://www.acfun.com" },
   {logo: "B",   url: "https://www.bilibili.com/",},
+  {logo: "C",   url: "https://cc.163.com/",},
+  {logo: "D",   url: "https://www.douyu.com/",},
+  {logo: "E",   url: "https://egame.qq.com/",},
+  {logo: "H",   url: "https://www.huya.com/",},
 ];//哈希表
 
 //删除添加网址的前后缀
