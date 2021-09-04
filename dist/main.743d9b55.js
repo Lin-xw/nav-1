@@ -108,7 +108,9 @@ var $siteList = $(".siteList"); //先找到siteList
 var $lastLi = $siteList.find("li.last"); //然后再找到li.last然后插入
 var x = localStorage.getItem("x");
 var xObject = JSON.parse(x); //把字符串重新变成对象
-var hashMap = xObject || [{ logo: "A", url: "https://www.acfun.cn" }, { logo: "B", url: "https://www.bilibili.com/" }];
+var hashMap = xObject || [{ logo: "A", url: "https://www.acfun.com" }, { logo: "B", url: "https://www.bilibili.com/" }]; //哈希表
+
+//删除添加网址的前后缀
 var simplifyUrl = function simplifyUrl(url) {
   return url.replace("https://", "").replace("http://", "") //删掉https前缀
   .replace("www.", "").replace(/\/.*/, ""); //删除/开头的内容
@@ -117,7 +119,9 @@ var simplifyUrl = function simplifyUrl(url) {
 var render = function render() {
   $siteList.find("li:not(.last)").remove();
   hashMap.forEach(function (node, index) {
-    var $li = $("<li>\n        <div class=\"site\">\n            <div class=\"logo\">" + node.logo + "</div>\n            <div class=\"link\">" + simplifyUrl(node.url) + "</div>\n            <div class=\"close\">\n              <svg class=\"icon\" >\n                <use xlink:href=\"#icon-close\"></use>\n              </svg>\n            </div>\n        </div>\n  </li>").insertBefore($lastLi);
+    //遍历
+    //创建li
+    var $li = $("<li>\n      <div class=\"sites\">\n        <div class=\"site\">\n            <div class=\"logo\">" + node.logo + "</div>\n            <div class=\"link\">" + simplifyUrl(node.url) + "</div>\n            <div class=\"close\">\n              <svg class=\"icon\" >\n                <use xlink:href=\"#icon-shanchu\"></use>\n              </svg>\n            </div>\n        </div>\n      </div>  \n  </li>").insertBefore($lastLi);
     $li.on("click", function () {
       window.open(node.url);
     });
@@ -131,6 +135,7 @@ var render = function render() {
 
 render();
 
+//网址添加当不填的时候触发
 $(".addButton").on("click", function () {
   var url = window.prompt("请问需要添加的网址是?");
   if (url.indexOf("http") != 0) {
@@ -158,4 +163,4 @@ $(document).on('keypress', function (e) {
   }
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.36d97c3a.map
+//# sourceMappingURL=main.743d9b55.map

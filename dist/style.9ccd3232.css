@@ -24,10 +24,16 @@ img {
 }
 /* style */
 body {
-  background: #eee;
+  background-image: url("setting.65289822.jpg");
+  max-width: 100%;
+  max-height: 100%;
+}
+.setting{
+  border: 1px solid red;
 }
 
 .globalHeader {
+
   margin: 20px;
 }
 @media (min-width: 500px) {
@@ -47,20 +53,22 @@ body {
   }
 }
 .searchForm > input {
+
   width: 100%;
   margin-right: 10px;
   height: 40px;
   padding: 0 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  background: #fffdf3;
+  border: 1px solid #fffdf3;
+  border-radius: 20px;
 }
 .searchForm > button {
   white-space: nowrap;
   padding: 0 28px;
   border: none;
-  border-radius: 4px;
-  background: #0282b9;
-  color: white;
+  border-radius: 20px;
+  background: #3c5c67;
+  color: #fffde6;
   font-size: 16px;
 }
 .globalMain {
@@ -92,19 +100,21 @@ body {
     max-right: 25px;
   }
 }
+
 .siteList .site {
   width: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: white;
+  background-color: #fffdf3;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 20px;
   padding: 20px 0;
   position: relative;
   cursor: pointer;
 }
+
 .siteList .site > .logo {
   width: 64px;
   height: 64px;
@@ -125,18 +135,28 @@ body {
   display: none;
   cursor: default;
 }
-.siteList .site:hover > .close {
-  display: block;
+@media(max-width: 500px){
+  .siteList .site > .close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    display: block;/*显示*/
+    cursor: default;
+  }
 }
-.siteList .addButton {
+
+.siteList .site:hover > .close {/*hover 当鼠标移动上去的时候*/
+  display: block;/*显示*/
+}
+.siteList .addButton{
   width: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: white;
+  background: #fffdf3;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 20px;
   padding: 20px 0;
 }
 .siteList .addButton .icon {

@@ -3,9 +3,11 @@ const $lastLi = $siteList.find("li.last"); //然后再找到li.last然后插入
 const x = localStorage.getItem("x");
 const xObject = JSON.parse(x); //把字符串重新变成对象
 const hashMap = xObject || [
-  { logo: "A", url: "https://www.acfun.cn" },
+  { logo: "A", url: "https://www.acfun.com" },
   {logo: "B",   url: "https://www.bilibili.com/",},
-];
+];//哈希表
+
+//删除添加网址的前后缀
 const simplifyUrl = (url) => {
   return url
     .replace("https://", "")
@@ -16,17 +18,20 @@ const simplifyUrl = (url) => {
 
 const render = () => {
   $siteList.find("li:not(.last)").remove();
-  hashMap.forEach((node,index) => {
+  hashMap.forEach((node,index) => {//遍历
+    //创建li
     const $li = $(`<li>
+      <div class="sites">
         <div class="site">
             <div class="logo">${node.logo}</div>
             <div class="link">${simplifyUrl(node.url)}</div>
             <div class="close">
               <svg class="icon" >
-                <use xlink:href="#icon-close"></use>
+                <use xlink:href="#icon-shanchu"></use>
               </svg>
             </div>
         </div>
+      </div>  
   </li>`).insertBefore($lastLi);
     $li.on("click", () => {
       window.open(node.url);
@@ -41,6 +46,7 @@ const render = () => {
 
 render();
 
+//网址添加当不填的时候触发
 $(".addButton").on("click", () => {
   let url = window.prompt("请问需要添加的网址是?");
   if (url.indexOf("http") != 0) {
