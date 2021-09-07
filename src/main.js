@@ -3,12 +3,12 @@ const $lastLi = $siteList.find("li.last"); //然后再找到li.last然后插入
 const x = localStorage.getItem("x");
 const xObject = JSON.parse(x); //把字符串重新变成对象
 const hashMap = xObject || [
-    {logo: "A", url: "https://www.acfun.com"},
-    {logo: "B", url: "https://www.bilibili.com/"},
-    {logo: "C", url: "https://cc.163.com/"},
-    {logo: "D", url: "https://www.douyu.com/"},
-    {logo: "E", url: "https://egame.qq.com/"},
-    {logo: "H", url: "https://www.huya.com/"},
+    {logo: "A", url: "https://www.acfun.con",},
+    {logo: "B", url: "https://www.bilibili.com/",},
+    {logo: "C", url: "https://cc.163.com/",},
+    {logo: "D", url: "https://www.douyu.com/",},
+    {logo: "E", url: "https://egame.qq.com/",},
+    {logo: "H", url: "https://www.huya.com/",},
 ];//哈希表
 
 //删除添加网址的前后缀
@@ -53,7 +53,7 @@ render();
 //网址添加当不填的时候触发
 $(".addButton").on("click", () => {
     let url = window.prompt("请问需要添加的网址是?");
-    if (url.indexOf("http") !== 0) {
+    if (url.indexOf("http") != 0) {
         url = "https://" + url;
     }
     hashMap.push({
