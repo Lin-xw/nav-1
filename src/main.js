@@ -3,7 +3,7 @@ const $lastLi = $siteList.find("li.last"); //然后再找到li.last然后插入
 const x = localStorage.getItem("x");
 const xObject = JSON.parse(x); //把字符串重新变成对象
 const hashMap = xObject || [
-    {logo: "A", url: "https://www.acfun.con",},
+    {logo: "A", url: "https://www.acfun.cn/",},
     {logo: "B", url: "https://www.bilibili.com/",},
     {logo: "C", url: "https://cc.163.com/",},
     {logo: "D", url: "https://www.douyu.com/",},
