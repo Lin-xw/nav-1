@@ -1,7 +1,7 @@
 const $siteList = $(".siteList"); //先找到siteList
 const $lastLi = $siteList.find("li.last"); //然后再找到li.last然后插入
-const x = localStorage.getItem("x");
-const xObject = JSON.parse(x); //把字符串重新变成对象
+const a = localStorage.getItem("a");
+const xObject = JSON.parse(a); //把字符串重新变成对象
 const hashMap = xObject || [
     {logo: "A", url: "https://www.acfun.cn/",},
     {logo: "B", url: "https://www.bilibili.com/",},
@@ -65,7 +65,7 @@ $(".addButton").on("click", () => {
 
 window.onbeforeunload = () => {
     const string = JSON.stringify(hashMap); //把对象变成string
-    localStorage.setItem("x", string);
+    localStorage.setItem("a", string);
 };
 
 $(document).on('keypress', (e) => {
