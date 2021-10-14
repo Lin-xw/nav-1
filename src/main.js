@@ -8,7 +8,7 @@ const hashMap = xObject || [
     {logo: "C", url: "https://cc.163.com/",},
     {logo: "D", url: "https://www.douyu.com/",},
     {logo: "E", url: "https://egame.qq.com/",},
-    {logo: "H", url: "https://www.huya.com/",},
+    {logo: "H", url: "https://www.huya.com/",}, 
 ];//哈希表
 
 //删除添加网址的前后缀
